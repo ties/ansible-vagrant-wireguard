@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: True
+  tasks:
+    - name: Update repositories cache and install "foo" package
+      apt:
+        name: aptitude
+        update_cache: yes
+
+    - name: Upgrade all packages to the latest version
+      apt:
+        name: "*"
+        state: latest

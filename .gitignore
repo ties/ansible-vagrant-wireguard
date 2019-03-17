@@ -1,0 +1,5 @@
+.vagrant/
+ansible/secret/*
+*.retry
+ansible/fact_cache/*
+.DS_Store

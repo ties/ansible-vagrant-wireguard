@@ -1,0 +1,17 @@
+---
+- name: vpn
+  hosts: ['vpn']
+  become: True
+
+  pre_tasks:
+    - name: Set ip_forwarding=1
+      sysctl:
+        name: net.ipv4.ip_forward
+        value: 1
+        state: present
+  roles:
+    - role: githubixx.ansible_role_wireguard
+      vars:
+        wireguard_cert_directory: "secret"
+        wireguard_cert_owner: "{{ lookup('env', 'USER') }}"
+        wireguard_cert_group: "nogroup"

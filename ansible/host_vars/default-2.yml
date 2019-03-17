@@ -1,0 +1,4 @@
+---
+wireguard_address: "10.8.0.2/24"
+wireguard_endpoint: ""
+wireguard_persistent_keepalive: 30
